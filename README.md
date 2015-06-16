@@ -5,3 +5,5 @@
 	- panel.cor: plots the correlation coefficient as a text element
 	- panel.hist: plots histograms in the diagonal
 	- panel.smoothScatter: plots smoothScatter with a loess fit
+- example iris dataset:
+![pairs_iris](https://github.com/lylamha/Visualization/pairs_iris.png "Example")
