@@ -5,8 +5,7 @@
 #' @param y numeric vector
 #' @return plot text element
 #' 
-panel.cor <- function(x, y, digits = 2, prefix = "", cex.cor, ...)
-{
+panel.cor <- function(x, y, digits = 2, prefix = "", cex.cor, ...) {
   usr <- par("usr"); on.exit(par(usr))
   par(usr = c(0, 1, 0, 1))
   r <- abs(cor(x, y))
@@ -21,8 +20,7 @@ panel.cor <- function(x, y, digits = 2, prefix = "", cex.cor, ...)
 #' @param x numeric vector
 #' @return histogram with colored bars
 #' 
-panel.hist <- function(x, ...)
-{
+panel.hist <- function(x, ...) {
   usr <- par("usr"); on.exit(par(usr))
   par(usr = c(usr[1:2], 0, 1.5) )
   h <- hist(x, plot = FALSE)
@@ -39,8 +37,8 @@ panel.hist <- function(x, ...)
 #' @return smoothed scatter plot
 #' 
 panel.smoothScatter <- function (x, y, bg = NA, 
-                                 cex = 1, col.smooth = "red", span = 2/3, iter = 3, ...) 
-{
+                                 cex = 1, col.smooth = "red",
+                                 span = 2/3, iter = 3, ...) {
   # colors for the density
   palette <- colorRampPalette(c("blue", "orange", "red"))
   s <- smoothScatter(x, y, colramp = palette, bg = bg, cex = cex, add=T)
