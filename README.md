@@ -6,4 +6,4 @@
 	- panel.hist: plots histograms in the diagonal
 	- panel.smoothScatter: plots smoothScatter with a loess fit
 - example iris dataset:
-![pairs_iris](https://github.com/lylamha/Visualization/pairs_iris.png "Example")
+![pairs_iris](https://github.com/lylamha/Visualization/blob/master/example_plots/pairs_iris.png "Example")
