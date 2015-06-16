@@ -1,3 +1,10 @@
+
+#' plot absolute correlation coefficients (pearson) into panel
+#' and adjust the text size according to the correlation
+#' @param x numeric vector
+#' @param y numeric vector
+#' @return plot text element
+#' 
 panel.cor <- function(x, y, digits = 2, prefix = "", cex.cor, ...)
 {
   usr <- par("usr"); on.exit(par(usr))
@@ -9,6 +16,11 @@ panel.cor <- function(x, y, digits = 2, prefix = "", cex.cor, ...)
   text(0.5, 0.5, txt, cex = cex.cor * r)
 }
 
+
+#' plot histogram into diagonal panel of a numeric vector
+#' @param x numeric vector
+#' @return histogram with colored bars
+#' 
 panel.hist <- function(x, ...)
 {
   usr <- par("usr"); on.exit(par(usr))
@@ -20,10 +32,16 @@ panel.hist <- function(x, ...)
 }
 
 
+#' plot a smoothScatter (color density of a scatter plot) with a loess fit
+#' into the panels 
+#' @param x numeric vector
+#' @param y numeric vector
+#' @return smoothed scatter plot
+#' 
 panel.smoothScatter <- function (x, y, bg = NA, 
                                  cex = 1, col.smooth = "red", span = 2/3, iter = 3, ...) 
 {
-  
+  # colors for the density
   palette <- colorRampPalette(c("blue", "orange", "red"))
   s <- smoothScatter(x, y, colramp = palette, bg = bg, cex = cex, add=T)
   ok <- is.finite(x) & is.finite(y)
@@ -33,8 +51,10 @@ panel.smoothScatter <- function (x, y, bg = NA,
 }
 
 
+### examples
 data(iris)
 myMatrix <- as.matrix(iris[,1:4])
+### see ?pairs for more help
 pairs(myMatrix,
       lower.panel = panel.smoothScatter,
       upper.panel = panel.cor,
